@@ -1,0 +1,22 @@
+<div class="captcha-container">
+    <label for="captcha">What is 5 + 3?</label>
+    <input
+        type="number"
+        id="captcha"
+        name="captcha"
+        placeholder="Enter your answer"
+        required
+    >
+</div>
+
+<button type="submit">Submit</button>
+<script>
+document.querySelector("form").addEventListener("submit", function (event) {
+    const answer = document.getElementById("captcha").value;
+
+    if (answer !== "8") {
+        event.preventDefault();
+        alert("Incorrect CAPTCHA. Please try again.");
+    }
+});
+</script>
